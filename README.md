@@ -12,21 +12,44 @@
 
 - **No Watermark** - All videos downloaded pure HD without logo/username
 - **All Platforms** - TikTok (incl. vt.tiktok, vm.tiktok), Instagram (Reels/Posts/Stories), YouTube (Shorts & full videos)
+- **PWA Installable** - Install as native app on Android/iOS/Desktop, 100kb, no Play Store
+- **Share Without Closing App** - Native Share Target API: Share video directly from TikTok/IG/YouTube to SnapDown app (see PWA_GUIDE.md)
+- **Clipboard Auto-Detect** - Copy link in TikTok, switch back to SnapDown, auto shows "Link detected" banner
 - **Multiple Qualities** - 1080p, 720p, 480p, 4K where available
 - **Lightning Fast** - Powered by Cobalt + TikWM APIs, extraction < 2s
 - **No Login Required** - 100% free, no registration, no limits
-- **Mobile Friendly** - Works on iPhone, Android, PC, Mac
+- **Mobile Friendly** - Works on iPhone, Android, PC, Mac + PWA offline cache
 - **Proxy Download** - Avoid CORS, direct CDN streaming
 - **Analytics** - PostgreSQL + Drizzle ORM tracks downloads (optional)
 - **GitHub Ready** - Complete project, just upload to GitHub and deploy
 
-## 🎬 Demo
+## 🎬 Demo - NEW PWA Share Flow
 
+### Method 1: Classic (Copy Paste)
 ```
 1. Copy TikTok / Instagram / YouTube link
 2. Paste in SnapDown
 3. Click Download → HD video without watermark!
 ```
+
+### Method 2: PWA - Without Closing App (NEW! Install First)
+```
+1. Install SnapDown: Open site → Tap Install App (header) → Add to Home Screen
+2. Open TikTok/Instagram/YouTube app
+3. Tap Share → Select SnapDown from share sheet
+4. SnapDown opens with link ready → Auto extracts → Download!
+→ TikTok stays open in background, no closing needed!
+```
+
+### Method 3: Clipboard Auto-Detect (Alternative)
+```
+1. In TikTok → Share → Copy Link
+2. Switch to SnapDown (still open in background)
+3. App shows "TikTok link detected in clipboard!" → Tap Paste & Download
+→ Feels native, no manual paste!
+```
+
+See **PWA_GUIDE.md** for detailed install + share instructions!
 
 Supports:
 - TikTok: `https://www.tiktok.com/@user/video/123...`, `https://vt.tiktok.com/...`, `https://vm.tiktok.com/...`
