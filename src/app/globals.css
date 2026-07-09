@@ -1,45 +1,28 @@
 @import "tailwindcss";
 
-* {
-  font-variant-ligatures: common-ligatures;
+/* PWA Theme Support */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: theme(colors.gray.50);
+    --color-text: theme(colors.gray.900);
+  }
 }
 
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #27272a #0a0a0a;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: theme(colors.gray.900);
+    --color-text: theme(colors.gray.100);
+  }
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* PWA Install Banner Styles */
+.pwa-install-banner {
+  @apply fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-4 rounded-t-2xl shadow-xl z-50;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
-}
-
-/* Focus styles */
-*:focus-visible {
-  outline: 2px solid #8b5cf6;
-  outline-offset: 2px;
-}
-
-/* Animations */
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+.pwa-install-banner.show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
